@@ -1,0 +1,33 @@
+.well {
+  width: 400px;
+  margin: 30px auto;
+}
+
+.panel-default>.panel-heading {
+  background-color: transparent;
+}
+
+
+.panel-facility {
+	position: relative;
+	padding-top: 42px;
+}
+
+.panel-facility .panel-heading {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.panel-facility .panel-body:before,
+.panel-facility .panel-body:after {
+	content: none;
+}
+
+.panel-body::empty {
+	display: none;
+}
+
+.panel-group .panel-heading {
+	border-bottom: 1px solid #ddd !important;
+	width: 100%;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/jquery-2.2.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</head>
+
+<body>
+  
+  <!-- Script -->
+  <div ng-app="demoFilter2" ng-controller="adminControl2">
+    <div class="well">
+      <input type="text" class="form-control" placeholder="Search by name..." ng-model="myFilter2.name">
+      <br>
+      <div class="panel-group" ">
+        <div class="panel panel-default panel-facility">
+          <div ng-show="filter1.length > 0">
+          	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+	            <div class="panel-body">
+	              <div ng-repeat="i in filter1 = (food| filter:myFilter2) ">
+	                {{i.name}}
+	              </div>
+	            </div>
+	          </div>
+
+	          <div class="panel-heading heading" role="tab">
+	            <h4 class="panel-title">
+			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+			            <label>Food</label>
+			          </a>
+			        </h4>
+	          </div>
+          </div>
+        </div>
+        <!-- panel -->
+      </div>
+      <div class="panel-group" ">
+        <div class="panel panel-default panel-facility">
+          <div ng-show="filter3.length > 0">
+          	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+	            <div class="panel-body">
+	              <div ng-repeat="x in filter3 = (bar| filter:myFilter2) ">
+	                {{x.name}}
+	              </div>
+	            </div>
+	          </div>
+
+	          <div class="panel-heading heading" role="tab">
+	            <h4 class="panel-title">
+			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+			            <label>Bar/Coffee</label>
+			          </a>
+			        </h4>
+	          </div>
+          </div>
+        </div>
+        <!-- panel -->
+      </div>
+      <div class="panel-group" ">
+        <div class="panel panel-default panel-facility">
+          <div ng-show="filter2.length > 0">
+          	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+	            <div class="panel-body">
+	              <div ng-repeat="y in filter2 = (bathroom| filter:myFilter2) ">
+	                {{y.name}}
+	              </div>
+	            </div>
+	          </div>
+
+	          <div class="panel-heading heading" role="tab">
+	            <h4 class="panel-title">
+			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+			            <label>Bathroom</label>
+			          </a>
+			        </h4>
+	          </div>
+          </div>
+        </div>
+        <!-- panel -->
+      </div>
+        <!-- panel group -->
+    </div>
+  </div>
+  
+
+</body>
+
+</html>
