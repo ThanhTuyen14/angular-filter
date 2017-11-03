@@ -17,12 +17,12 @@
     <div class="well">
       <input type="text" class="form-control" placeholder="Search by name..." ng-model="myFilter2.name">
       <br>
-      <div class="panel-group" ">
-        <div class="panel panel-default panel-facility">
-          <div ng-show="filter1.length > 0">
+      <div class="panel-group">
+
+        <div class="panel panel-default panel-facility" ng-repeat="group in sample_db" ng-show="filter1.length > 0">
           	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
 	            <div class="panel-body">
-	              <div ng-repeat="i in filter1 = (food| filter:myFilter2) ">
+	              <div ng-repeat="i in filter1 = (group.contents | filter:myFilter2) ">
 	                {{i.name}}
 	              </div>
 	            </div>
@@ -31,55 +31,10 @@
 	          <div class="panel-heading heading" role="tab">
 	            <h4 class="panel-title">
 			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
-			            <label>Food</label>
+			            <label>{{group.title + ' (' + filter1.length + '/' + group.contents.length + ')'}}</label>
 			          </a>
 			        </h4>
 	          </div>
-          </div>
-        </div>
-        <!-- panel -->
-      </div>
-      <div class="panel-group" ">
-        <div class="panel panel-default panel-facility">
-          <div ng-show="filter3.length > 0">
-          	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
-	            <div class="panel-body">
-	              <div ng-repeat="x in filter3 = (bar| filter:myFilter2) ">
-	                {{x.name}}
-	              </div>
-	            </div>
-	          </div>
-
-	          <div class="panel-heading heading" role="tab">
-	            <h4 class="panel-title">
-			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
-			            <label>Bar/Coffee</label>
-			          </a>
-			        </h4>
-	          </div>
-          </div>
-        </div>
-        <!-- panel -->
-      </div>
-      <div class="panel-group" ">
-        <div class="panel panel-default panel-facility">
-          <div ng-show="filter2.length > 0">
-          	<div class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
-	            <div class="panel-body">
-	              <div ng-repeat="y in filter2 = (bathroom| filter:myFilter2) ">
-	                {{y.name}}
-	              </div>
-	            </div>
-	          </div>
-
-	          <div class="panel-heading heading" role="tab">
-	            <h4 class="panel-title">
-			          <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
-			            <label>Bathroom</label>
-			          </a>
-			        </h4>
-	          </div>
-          </div>
         </div>
         <!-- panel -->
       </div>
